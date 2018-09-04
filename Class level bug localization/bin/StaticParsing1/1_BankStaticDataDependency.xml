@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Source_Code>
+    <Package name="sudoku">
+        <Class name="BackListener">
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="13" name="System.out.println(&quot;BackListener actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="14" name="System.exit(0)"/>
+                <Node dependencies="" lineNo="15" name="MenuFrame menuFrame=new MenuFrame();&#10;"/>
+                <Node dependencies="" lineNo="16" name="menuFrame.setProperty()"/>
+                <Node dependencies="15" lineNo="17" name="menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)"/>
+                <Node dependencies="15" lineNo="18" name="menuFrame.setSize(600,500)"/>
+                <Node dependencies="15" lineNo="19" name="menuFrame.setVisible(true)"/>
+            </Method>
+        </Class>
+        <Class name="ButtonHandler">
+            <Method name="ButtonHandler" score="0.0">
+                <Node dependencies="" lineNo="14" name="this.blockX=blockX"/>
+                <Node dependencies="" lineNo="15" name="this.blockY=blockY"/>
+                <Node dependencies="" lineNo="16" name="this.posX=posX"/>
+                <Node dependencies="" lineNo="17" name="this.posY=posY"/>
+                <Node dependencies="" lineNo="18" name="this.button=button"/>
+                <Node dependencies="" lineNo="19" name="this.dimension=dimension"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="24" name="System.out.println(&quot;ButtonHandler actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="25" name="Keypad keypad=new Keypad(button,blockX,blockY,posX,posY,dimension);&#10;"/>
+                <Node dependencies="25" lineNo="26" name="keypad.setVisible(true)"/>
+            </Method>
+        </Class>
+        <Class name="CheckButtonHandler">
+            <Method name="CheckButtonHandler" score="0.0">
+                <Node dependencies="" lineNo="20" name="this.MESSAGE=MESSAGE"/>
+                <Node dependencies="" lineNo="21" name="this.suduku=suduku"/>
+                <Node dependencies="" lineNo="22" name="this.grid=grid"/>
+                <Node dependencies="" lineNo="23" name="this.dimension=dimension"/>
+                <Node dependencies="" lineNo="24" name="this.button=button"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="30" name="boolean flag=true;&#10;"/>
+                <Node dependencies="" lineNo="31" name="System.out.println(&quot;CheckButtonHandler actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="33" name="int i=0"/>
+                <Node dependencies="" lineNo="34" name="int j=0"/>
+                <Node dependencies="" lineNo="35" name="int k=0"/>
+                <Node dependencies="" lineNo="36" name="int l=0"/>
+                <Node dependencies="" lineNo="38" name="button[i][j][k][l].getText().compareTo(Integer.toString(suduku.answer[i][j][k][l].value)) != 0"/>
+                <Node dependencies="" lineNo="38" name="flag=false"/>
+                <Node dependencies="" lineNo="39" name="button[i][j][k][l].getText().compareTo(&quot;&quot;) != 0 &amp;&amp; button[i][j][k][l].getText().compareTo(Integer.toString(suduku.answer[i][j][k][l].value)) != 0"/>
+                <Node dependencies="" lineNo="41" name="button[i][j][k][l].setBackground(Color.WHITE)"/>
+                <Node dependencies="" lineNo="44" name="flag"/>
+                <Node dependencies="" lineNo="46" name="MESSAGE=new String(&quot;Congratulation&quot;)"/>
+                <Node dependencies="" lineNo="47" name="grid.dispose()"/>
+                <Node dependencies="" lineNo="48" name="MenuFrame menuFrame=new MenuFrame();&#10;"/>
+                <Node dependencies="" lineNo="49" name="menuFrame.setProperty()"/>
+                <Node dependencies="48" lineNo="50" name="menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)"/>
+                <Node dependencies="48" lineNo="51" name="menuFrame.setSize(600,500)"/>
+                <Node dependencies="48" lineNo="52" name="menuFrame.setVisible(true)"/>
+            </Method>
+        </Class>
+        <Class name="Easy">
+            <Method name="Easy" score="0.0">
+                <Node dependencies="" lineNo="8" name="this.dimension=2"/>
+                <Node dependencies="" lineNo="10" name="int[][] sequence={{0,1},{1,0}};&#10;"/>
+                <Node dependencies="10," lineNo="11" name="this.sequences=sequence"/>
+                <Node dependencies="" lineNo="13" name="Unit[][][][] answer=new Unit[2][2][2][2];&#10;"/>
+                <Node dependencies="13," lineNo="14" name="this.answer=answer"/>
+            </Method>
+        </Class>
+        <Class name="EasySetter">
+            <Method name="EasySetter" score="0.0">
+                <Node dependencies="" lineNo="13" name="level=_level"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="19" name="System.out.println(&quot;EasySetter actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="20" name="level=&quot;Easy&quot;"/>
+            </Method>
+        </Class>
+        <Class name="ExitHandler">
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="11" name="System.out.println(&quot;ExitHandler actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="12" name="System.exit(0)"/>
+            </Method>
+        </Class>
+        <Class name="GridLayoutExample">
+            <Method name="GridLayoutExample" score="0.0">
+                <Node dependencies="" lineNo="23" name="this.suduku=suduku"/>
+                <Node dependencies="" lineNo="24" name="MESSAGE=get"/>
+                <Node dependencies="" lineNo="25" name="initUI()"/>
+            </Method>
+            <Method name="initUI" score="0.0">
+                <Node dependencies="" lineNo="29" name="System.out.println(&quot;GridLayoutExample initUI&quot;)"/>
+                <Node dependencies="" lineNo="31" name="JPanel panel=new JPanel();&#10;"/>
+                <Node dependencies="" lineNo="33" name="final int dimension=suduku.dimension;&#10;"/>
+                <Node dependencies="" lineNo="34" name="String[][][][] buttons=new String[dimension][dimension][dimension][dimension];&#10;"/>
+                <Node dependencies="" lineNo="35" name="final JButton[][][][] button=new JButton[dimension][dimension][dimension][dimension];&#10;"/>
+                <Node dependencies="31" lineNo="38" name="panel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5))"/>
+                <Node dependencies="31" lineNo="39" name="panel.setLayout(new GridLayout(dimension * dimension + 1,dimension * dimension,5,5))"/>
+                <Node dependencies="" lineNo="43" name="int i=0"/>
+                <Node dependencies="" lineNo="44" name="int j=0"/>
+                <Node dependencies="" lineNo="45" name="int k=0"/>
+                <Node dependencies="" lineNo="46" name="int l=0"/>
+                <Node dependencies="" lineNo="48" name="suduku.answer[i][j][k][l].show"/>
+                <Node dependencies="" lineNo="48" name="buttons[i][j][k][l]=Integer.toString(suduku.answer[i][j][k][l].value)"/>
+                <Node dependencies="" lineNo="49" name="buttons[i][j][k][l]=&quot;&quot;"/>
+                <Node dependencies="" lineNo="52" name="int i=0"/>
+                <Node dependencies="" lineNo="53" name="int j=0"/>
+                <Node dependencies="" lineNo="54" name="int k=0"/>
+                <Node dependencies="" lineNo="55" name="int l=0"/>
+                <Node dependencies="" lineNo="56" name="button[i][j][k][l]=new JButton(buttons[i][j][k][l])"/>
+                <Node dependencies="" lineNo="58" name="int i=0"/>
+                <Node dependencies="" lineNo="59" name="int j=0"/>
+                <Node dependencies="" lineNo="60" name="int k=0"/>
+                <Node dependencies="" lineNo="61" name="int l=0"/>
+                <Node dependencies="" lineNo="63" name="dimension == 3"/>
+                <Node dependencies="" lineNo="65" name="(i == 0 || i == 2) &amp;&amp; (k == 0 || k == 2)"/>
+                <Node dependencies="" lineNo="65" name="button[i][k][j][l].setBackground(Color.green)"/>
+                <Node dependencies="" lineNo="66" name="i == 1 &amp;&amp; k == 1"/>
+                <Node dependencies="" lineNo="66" name="button[i][k][j][l].setBackground(Color.cyan)"/>
+                <Node dependencies="" lineNo="67" name="button[i][k][j][l].setBackground(Color.YELLOW)"/>
+                <Node dependencies="" lineNo="72" name="i == 0 &amp;&amp; k == 0"/>
+                <Node dependencies="" lineNo="72" name="button[i][k][j][l].setBackground(Color.green)"/>
+                <Node dependencies="" lineNo="73" name="i == 0 &amp;&amp; k == 1"/>
+                <Node dependencies="" lineNo="73" name="button[i][k][j][l].setBackground(Color.ORANGE)"/>
+                <Node dependencies="" lineNo="74" name="i == 1 &amp;&amp; k == 0"/>
+                <Node dependencies="" lineNo="74" name="button[i][k][j][l].setBackground(Color.YELLOW)"/>
+                <Node dependencies="" lineNo="75" name="button[i][k][j][l].setBackground(Color.cyan)"/>
+                <Node dependencies="" lineNo="78" name="suduku.answer[i][k][j][l].given == false"/>
+                <Node dependencies="" lineNo="80" name="ButtonHandler handler=new ButtonHandler(i,j,k,l,button,dimension);&#10;"/>
+                <Node dependencies="" lineNo="81" name="button[i][k][j][l].addActionListener(handler)"/>
+                <Node dependencies="31" lineNo="83" name="panel.add(button[i][k][j][l])"/>
+                <Node dependencies="" lineNo="86" name="JButton check=new JButton(&quot;Go&quot;);&#10;"/>
+                <Node dependencies="86" lineNo="87" name="check.setBackground(Color.RED)"/>
+                <Node dependencies="86" lineNo="88" name="check.addActionListener(new CheckButtonHandler(MESSAGE,suduku,this,dimension,button))"/>
+                <Node dependencies="31" lineNo="90" name="panel.add(check)"/>
+                <Node dependencies="" lineNo="92" name="JButton back=new JButton(&quot;&lt;-&quot;);&#10;"/>
+                <Node dependencies="92" lineNo="93" name="back.setBackground(Color.ORANGE)"/>
+                <Node dependencies="" lineNo="94" name="back.addActionListener(new BackListener())"/>
+                <Node dependencies="31" lineNo="95" name="panel.add(back)"/>
+                <Node dependencies="" lineNo="96" name="add(panel)"/>
+                <Node dependencies="" lineNo="97" name="setTitle(&quot;Suduku Game&quot;)"/>
+                <Node dependencies="" lineNo="98" name="setSize(550,550)"/>
+                <Node dependencies="" lineNo="99" name="setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)"/>
+                <Node dependencies="" lineNo="100" name="setLocationRelativeTo(null)"/>
+            </Method>
+        </Class>
+        <Class name="Hard">
+            <Method name="Hard" score="0.0">
+                <Node dependencies="" lineNo="8" name="this.dimension=3"/>
+                <Node dependencies="" lineNo="10" name="int[][] sequence={{0,1,2},{1,2,0},{2,0,1}};&#10;"/>
+                <Node dependencies="10," lineNo="11" name="this.sequences=sequence"/>
+                <Node dependencies="" lineNo="13" name="Unit[][][][] answer=new Unit[3][3][3][3];&#10;"/>
+                <Node dependencies="13," lineNo="14" name="this.answer=answer"/>
+            </Method>
+        </Class>
+        <Class name="HardSetter">
+            <Method name="HardSetter" score="0.0">
+                <Node dependencies="" lineNo="12" name="level=_level"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="18" name="System.out.println(&quot;HardSetter actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="19" name="level=&quot;Hard&quot;"/>
+            </Method>
+        </Class>
+        <Class name="HelpButtonHandler">
+            <Method name="HelpButtonHandler" score="0.0">
+                <Node dependencies="" lineNo="16" name="MESSAGE=message"/>
+                <Node dependencies="" lineNo="17" name="displayAuthor=label"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="23" name="System.out.println(&quot;HelpButtonHandler actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="24" name="MESSAGE=new String(&quot;Fill the maze such that sum in a row, column and box is constant&quot;)"/>
+                <Node dependencies="17" lineNo="25" name="displayAuthor.setFont(new Font(&quot;Serif&quot;,Font.PLAIN,20))"/>
+                <Node dependencies="17" lineNo="26" name="displayAuthor.setText(MESSAGE)"/>
+            </Method>
+        </Class>
+        <Class name="Keypad">
+            <Method name="Keypad" score="0.0">
+                <Node dependencies="" lineNo="20" name="this.blockX=blockX"/>
+                <Node dependencies="" lineNo="20" name="this.blockY=blockY"/>
+                <Node dependencies="" lineNo="20" name="this.posX=posX"/>
+                <Node dependencies="" lineNo="20" name="this.posY=posY"/>
+                <Node dependencies="" lineNo="21" name="gameButton=button"/>
+                <Node dependencies="" lineNo="22" name="dimension=_dimension"/>
+                <Node dependencies="" lineNo="23" name="initUI()"/>
+            </Method>
+            <Method name="initUI" score="0.0">
+                <Node dependencies="" lineNo="28" name="System.out.println(&quot;Keypad initUI&quot;)"/>
+                <Node dependencies="14" lineNo="29" name="panel.setBorder(BorderFactory.createEmptyBorder(5,5,5,5))"/>
+                <Node dependencies="14" lineNo="30" name="panel.setLayout(new GridLayout(dimension,dimension,5,5))"/>
+                <Node dependencies="" lineNo="32" name="String[] buttons={&quot;1&quot;,&quot;2&quot;,&quot;3&quot;,&quot;4&quot;,&quot;5&quot;,&quot;6&quot;,&quot;7&quot;,&quot;8&quot;,&quot;9&quot;};&#10;"/>
+                <Node dependencies="" lineNo="33" name="Color[] color={Color.GREEN,Color.CYAN,Color.YELLOW,Color.ORANGE};&#10;"/>
+                <Node dependencies="" lineNo="35" name="JButton[] keyPadButton=new JButton[dimension * dimension];&#10;"/>
+                <Node dependencies="" lineNo="36" name="int i=0"/>
+                <Node dependencies="" lineNo="38" name="keyPadButton[i]=new JButton(buttons[i])"/>
+                <Node dependencies="38" lineNo="39" name="keyPadButton[i].setBackground(color[i % color.length])"/>
+                <Node dependencies="38" lineNo="40" name="keyPadButton[i].addActionListener(new KeyPadListener(dimension,panel,gameButton,blockX,blockY,posX,posY,this))"/>
+                <Node dependencies="14" lineNo="41" name="panel.add(keyPadButton[i])"/>
+                <Node dependencies="" lineNo="44" name="add(panel)"/>
+                <Node dependencies="" lineNo="46" name="setTitle(&quot;Keypad&quot;)"/>
+                <Node dependencies="" lineNo="47" name="setSize(200,200)"/>
+                <Node dependencies="" lineNo="48" name="setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)"/>
+                <Node dependencies="" lineNo="49" name="setLocationRelativeTo(null)"/>
+            </Method>
+        </Class>
+        <Class name="KeyPadListener">
+            <Method name="KeyPadListener" score="0.0">
+                <Node dependencies="" lineNo="20" name="this.dimension=dimension"/>
+                <Node dependencies="13," lineNo="21" name="this.panel=panel"/>
+                <Node dependencies="" lineNo="22" name="this.gameButton=gameButton"/>
+                <Node dependencies="" lineNo="23" name="this.blockX=blockX"/>
+                <Node dependencies="" lineNo="24" name="this.blockY=blockY"/>
+                <Node dependencies="" lineNo="25" name="this.posX=posX"/>
+                <Node dependencies="" lineNo="26" name="this.posY=posY"/>
+                <Node dependencies="" lineNo="27" name="this.keypad=keypad"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="33" name="System.out.println(&quot;KeyPadListener actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="34" name="String string=event.getActionCommand();&#10;"/>
+                <Node dependencies="" lineNo="35" name="gameButton[blockX][posX][blockY][posY].setText(&quot;1&quot;)"/>
+                <Node dependencies="" lineNo="36" name="dimension == 3"/>
+                <Node dependencies="" lineNo="38" name="(blockX == 0 || blockX == 2) &amp;&amp; (posX == 0 || posX == 2)"/>
+                <Node dependencies="" lineNo="38" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.green)"/>
+                <Node dependencies="" lineNo="39" name="blockX == 1 &amp;&amp; posX == 1"/>
+                <Node dependencies="" lineNo="39" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.cyan)"/>
+                <Node dependencies="" lineNo="40" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.YELLOW)"/>
+                <Node dependencies="" lineNo="45" name="blockX == 0 &amp;&amp; posX == 0"/>
+                <Node dependencies="" lineNo="45" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.green)"/>
+                <Node dependencies="" lineNo="46" name="blockX == 0 &amp;&amp; posX == 1"/>
+                <Node dependencies="" lineNo="46" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.ORANGE)"/>
+                <Node dependencies="" lineNo="47" name="blockX == 1 &amp;&amp; posX == 0"/>
+                <Node dependencies="" lineNo="47" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.YELLOW)"/>
+                <Node dependencies="" lineNo="48" name="gameButton[blockX][posX][blockY][posY].setBackground(Color.cyan)"/>
+                <Node dependencies="" lineNo="50" name="keypad.dispose()"/>
+            </Method>
+        </Class>
+        <Class name="MainApp">
+            <Method name="main" score="0.0">
+                <Node dependencies="" lineNo="10" name="System.out.println(&quot;MainApp main&quot;)"/>
+                <Node dependencies="" lineNo="11" name="MenuFrame menuFrame=new MenuFrame();&#10;"/>
+                <Node dependencies="" lineNo="12" name="menuFrame.setProperty()"/>
+                <Node dependencies="11" lineNo="13" name="menuFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE)"/>
+                <Node dependencies="11" lineNo="14" name="menuFrame.setSize(600,500)"/>
+                <Node dependencies="11" lineNo="15" name="menuFrame.setVisible(true)"/>
+            </Method>
+        </Class>
+        <Class name="MenuFrame">
+            <Method name="MenuFrame" score="0.0"/>
+            <Method name="setProperty" score="0.0">
+                <Node dependencies="" lineNo="29" name="System.out.println(&quot;MenuFrame setProperty&quot;)"/>
+                <Node dependencies="" lineNo="30" name="JMenuBar bar=new JMenuBar();&#10;"/>
+                <Node dependencies="" lineNo="32" name="JMenu optionsMenu=new JMenu(&quot;Options&quot;);&#10;"/>
+                <Node dependencies="32" lineNo="33" name="optionsMenu.setMnemonic('r')"/>
+                <Node dependencies="" lineNo="35" name="JMenuItem play=new JMenuItem(&quot;Play&quot;);&#10;"/>
+                <Node dependencies="35" lineNo="36" name="play.setMnemonic('C')"/>
+                <Node dependencies="" lineNo="37" name="String msg=&quot;WELCOME Sudoku Game&quot;;&#10;"/>
+                <Node dependencies="" lineNo="38" name="String MESSAGE=new String(msg);&#10;"/>
+                <Node dependencies="" lineNo="39" name="PlayHandler playHandler=new PlayHandler(this,level,MESSAGE);&#10;"/>
+                <Node dependencies="35" lineNo="40" name="play.addActionListener(playHandler)"/>
+                <Node dependencies="32" lineNo="42" name="optionsMenu.add(play)"/>
+                <Node dependencies="" lineNo="43" name="optionsMenu.addSeparator()"/>
+                <Node dependencies="" lineNo="45" name="JMenuItem help=new JMenuItem(&quot;Help&quot;);&#10;"/>
+                <Node dependencies="45" lineNo="46" name="help.setMnemonic('h')"/>
+                <Node dependencies="32" lineNo="48" name="optionsMenu.add(help)"/>
+                <Node dependencies="" lineNo="49" name="optionsMenu.addSeparator()"/>
+                <Node dependencies="" lineNo="51" name="JMenu levelMenu=new JMenu(&quot;Level&quot;);&#10;"/>
+                <Node dependencies="" lineNo="52" name="String[] levelNames={&quot;Easy&quot;,&quot;Hard&quot;};&#10;"/>
+                <Node dependencies="" lineNo="53" name="levelItems=new JMenuItem[levelNames.length]"/>
+                <Node dependencies="" lineNo="56" name="int count=0"/>
+                <Node dependencies="" lineNo="58" name="levelItems[count]=new JMenuItem(levelNames[count])"/>
+                <Node dependencies="51" lineNo="60" name="levelMenu.add(levelItems[count])"/>
+                <Node dependencies="" lineNo="63" name="levelItems[0].addActionListener(new EasySetter(level))"/>
+                <Node dependencies="" lineNo="65" name="levelItems[1].addActionListener(new HardSetter(level))"/>
+                <Node dependencies="32" lineNo="67" name="optionsMenu.add(levelMenu)"/>
+                <Node dependencies="30" lineNo="68" name="bar.add(optionsMenu)"/>
+                <Node dependencies="" lineNo="70" name="JMenu exit=new JMenu(&quot;Exit&quot;);&#10;"/>
+                <Node dependencies="70" lineNo="71" name="exit.setMnemonic('E')"/>
+                <Node dependencies="" lineNo="73" name="JMenuItem exitItem=new JMenuItem(&quot;Ok?&quot;);&#10;"/>
+                <Node dependencies="73" lineNo="74" name="exitItem.setMnemonic('x')"/>
+                <Node dependencies="70" lineNo="75" name="exit.add(exitItem)"/>
+                <Node dependencies="" lineNo="76" name="exitItem.addActionListener(new ExitHandler())"/>
+                <Node dependencies="" lineNo="78" name="setJMenuBar(bar)"/>
+                <Node dependencies="30" lineNo="79" name="bar.add(exit)"/>
+                <Node dependencies="" lineNo="82" name="displayAuthor=new JLabel(MESSAGE,SwingConstants.CENTER)"/>
+                <Node dependencies="82" lineNo="83" name="displayAuthor.setForeground(Color.RED)"/>
+                <Node dependencies="82" lineNo="84" name="displayAuthor.setFont(new Font(&quot;Serif&quot;,Font.BOLD,72))"/>
+                <Node dependencies="45" lineNo="85" name="help.addActionListener(new HelpButtonHandler(MESSAGE,displayAuthor))"/>
+                <Node dependencies="" lineNo="86" name="getContentPane().setBackground(Color.CYAN)"/>
+                <Node dependencies="" lineNo="87" name="add(displayAuthor,BorderLayout.CENTER)"/>
+            </Method>
+        </Class>
+        <Class name="PlayHandler">
+            <Method name="PlayHandler" score="0.0">
+                <Node dependencies="" lineNo="14" name="menuFrame=frame"/>
+                <Node dependencies="" lineNo="15" name="level=_level"/>
+                <Node dependencies="" lineNo="16" name="MESSAGE=message"/>
+            </Method>
+            <Method name="actionPerformed" score="0.0">
+                <Node dependencies="" lineNo="21" name="System.out.println(&quot;PlayHandler actionPerformed&quot;)"/>
+                <Node dependencies="" lineNo="22" name="Suduku suduku;&#10;"/>
+                <Node dependencies="" lineNo="23" name="level.equals(&quot;Hard&quot;)"/>
+                <Node dependencies="" lineNo="23" name="suduku=new Easy()"/>
+                <Node dependencies="" lineNo="24" name="suduku=new Hard()"/>
+                <Node dependencies="" lineNo="26" name="suduku.setAnswer()"/>
+                <Node dependencies="" lineNo="27" name="suduku.setQuestion()"/>
+                <Node dependencies="" lineNo="29" name="GridLayoutExample ex=new GridLayoutExample(suduku,MESSAGE);&#10;"/>
+                <Node dependencies="29" lineNo="30" name="ex.setVisible(true)"/>
+                <Node dependencies="" lineNo="32" name="menuFrame.dispose()"/>
+            </Method>
+        </Class>
+        <Class name="Position">
+            <Method name="Position" score="0.0">
+                <Node dependencies="" lineNo="13" name="this.blockX=blockX"/>
+                <Node dependencies="" lineNo="14" name="this.blockY=blockY"/>
+                <Node dependencies="" lineNo="15" name="this.posX=posX"/>
+                <Node dependencies="" lineNo="16" name="this.posY=posY"/>
+            </Method>
+        </Class>
+        <Class name="Suduku">
+            <Method name="Suduku" score="0.0"/>
+            <Method name="setAnswer" score="0.0">
+                <Node dependencies="" lineNo="21" name="System.out.println(&quot;Suduku setAnswer&quot;)"/>
+                <Node dependencies="" lineNo="22" name="int[][] frame=new int[dimension][dimension];&#10;"/>
+                <Node dependencies="" lineNo="24" name="Vector&lt;Integer&gt; suggest=new Vector&lt;Integer&gt;();&#10;"/>
+                <Node dependencies="" lineNo="25" name="int i=1"/>
+                <Node dependencies="24" lineNo="25" name="suggest.add(i)"/>
+                <Node dependencies="" lineNo="27" name="int i=0"/>
+                <Node dependencies="" lineNo="28" name="int j=0"/>
+                <Node dependencies="" lineNo="30" name="int index=0;&#10;"/>
+                <Node dependencies="" lineNo="31" name="frame[i][j]=suggest.elementAt(index)"/>
+                <Node dependencies="24" lineNo="32" name="suggest.removeElementAt(index)"/>
+                <Node dependencies="" lineNo="35" name="int i=0"/>
+                <Node dependencies="" lineNo="36" name="int j=0"/>
+                <Node dependencies="" lineNo="38" name="Vector&lt;Integer&gt; choose=new Vector&lt;Integer&gt;();&#10;"/>
+                <Node dependencies="" lineNo="39" name="int k=0"/>
+                <Node dependencies="38" lineNo="39" name="choose.add(k)"/>
+                <Node dependencies="" lineNo="41" name="int k=0"/>
+                <Node dependencies="" lineNo="43" name="int index=random.nextInt(choose.size());&#10;"/>
+                <Node dependencies="" lineNo="44" name="answer[0][i][j][k]=new Unit(frame[sequences[i][j]][choose.elementAt(index)])"/>
+                <Node dependencies="38" lineNo="45" name="choose.removeElementAt(index)"/>
+                <Node dependencies="" lineNo="49" name="int i=1"/>
+                <Node dependencies="" lineNo="50" name="int j=0"/>
+                <Node dependencies="" lineNo="51" name="int k=0"/>
+                <Node dependencies="" lineNo="52" name="int l=0"/>
+                <Node dependencies="" lineNo="53" name="answer[i][j][l][k]=new Unit(answer[0][j][sequences[i][l]][sequences[i][k]].value)"/>
+            </Method>
+            <Method name="setQuestion" score="0.0">
+                <Node dependencies="" lineNo="59" name="System.out.println(&quot;Suduku setQuestion&quot;)"/>
+                <Node dependencies="" lineNo="60" name="Vector&lt;Position&gt; positions=new Vector&lt;Position&gt;();&#10;"/>
+                <Node dependencies="" lineNo="62" name="int i=0"/>
+                <Node dependencies="" lineNo="63" name="int j=0"/>
+                <Node dependencies="" lineNo="64" name="int k=0"/>
+                <Node dependencies="" lineNo="65" name="int l=0"/>
+                <Node dependencies="" lineNo="67" name="Position pos=new Position(i,j,k,l);&#10;"/>
+                <Node dependencies="60" lineNo="68" name="positions.add(pos)"/>
+                <Node dependencies="" lineNo="73" name="int index=random.nextInt(positions.size());&#10;"/>
+                <Node dependencies="" lineNo="74" name="Position pos=positions.elementAt(index);&#10;"/>
+                <Node dependencies="60" lineNo="75" name="positions.removeElementAt(index)"/>
+                <Node dependencies="" lineNo="77" name="boolean[] exist=new boolean[dimension * dimension];&#10;"/>
+                <Node dependencies="" lineNo="77" name="int i=0"/>
+                <Node dependencies="" lineNo="77" name="exist[i]=false"/>
+                <Node dependencies="" lineNo="79" name="int k=0"/>
+                <Node dependencies="" lineNo="81" name="int l=0"/>
+                <Node dependencies="" lineNo="83" name="answer[pos.blockX][pos.blockY][k][l].show == true"/>
+                <Node dependencies="" lineNo="83" name="exist[answer[pos.blockX][pos.blockY][k][l].value - 1]=true"/>
+                <Node dependencies="" lineNo="84" name="answer[pos.blockX][k][pos.posY][l].show == true"/>
+                <Node dependencies="" lineNo="84" name="exist[answer[pos.blockX][k][pos.posY][l].value - 1]=true"/>
+                <Node dependencies="" lineNo="85" name="answer[k][pos.blockY][l][pos.posY].show == true"/>
+                <Node dependencies="" lineNo="85" name="exist[answer[k][pos.blockY][l][pos.posY].value - 1]=true"/>
+                <Node dependencies="" lineNo="89" name="boolean cancel=true;&#10;"/>
+                <Node dependencies="" lineNo="90" name="int i=0"/>
+                <Node dependencies="" lineNo="91" name="(i + 1) != answer[pos.blockX][pos.blockY][pos.posX][pos.posY].value &amp;&amp; exist[i] == false"/>
+                <Node dependencies="" lineNo="93" name="cancel=false"/>
+                <Node dependencies="" lineNo="98" name="cancel"/>
+                <Node dependencies="" lineNo="98" name="answer[pos.blockX][pos.blockY][pos.posX][pos.posY].show=true"/>
+                <Node dependencies="" lineNo="99" name="cancel"/>
+                <Node dependencies="" lineNo="99" name="answer[pos.blockX][pos.blockY][pos.posX][pos.posY].given=false"/>
+            </Method>
+            <Method name="show" score="0.0">
+                <Node dependencies="" lineNo="105" name="System.out.println(&quot;Suduku show&quot;)"/>
+                <Node dependencies="" lineNo="106" name="int i=0"/>
+                <Node dependencies="" lineNo="107" name="int j=0"/>
+                <Node dependencies="" lineNo="108" name="int k=0"/>
+                <Node dependencies="" lineNo="109" name="int l=0"/>
+                <Node dependencies="" lineNo="110" name="System.out.print(answer[i][k][j][l].value + &quot; &quot;)"/>
+                <Node dependencies="" lineNo="111" name="System.out.println()"/>
+                <Node dependencies="" lineNo="114" name="System.out.println()"/>
+                <Node dependencies="" lineNo="116" name="int i=0"/>
+                <Node dependencies="" lineNo="117" name="int j=0"/>
+                <Node dependencies="" lineNo="118" name="int k=0"/>
+                <Node dependencies="" lineNo="119" name="int l=0"/>
+                <Node dependencies="" lineNo="120" name="System.out.printf(&quot;%d &quot;,(answer[i][k][j][l].show) ? answer[i][k][j][l].value : 0)"/>
+                <Node dependencies="" lineNo="121" name="System.out.println()"/>
+            </Method>
+        </Class>
+        <Class name="Unit">
+            <Method name="Unit" score="0.0">
+                <Node dependencies="" lineNo="12" name="this.value=theValue"/>
+                <Node dependencies="" lineNo="13" name="this.show=true"/>
+                <Node dependencies="" lineNo="14" name="this.given=true"/>
+            </Method>
+        </Class>
+    </Package>
+</Source_Code>

@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Source_Code>
+    <Package name="bank">
+        <Class name="BankAccount">
+            <Method lineNo="11" name="BankAccount">
+                <MethodContent>{
+  this.accIdTypeBalance=accIdTypeBalance;
+  this.count=count;
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="16" name="accountCreate">
+                <MethodContent>{
+  userNameAcc.put(userName,amount);
+  accountUserNameAcc.put(accountType,userNameAcc);
+  accIdTypeBalance.put(count,accountUserNameAcc);
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="22" name="getQuestionAnswer">
+                <MethodContent>{
+  System.out.println("Welcome from Money withdraw section ");
+  System.out.println("Enter User Name: ");
+  String userName;
+  try {
+    userName=br.readLine();
+    System.out.println("Enter Account Type: ");
+    String type=br.readLine();
+    System.out.println("Enter Starting Deposit Amount: ");
+    float amount=Float.parseFloat(br.readLine());
+    accountCreate(type,amount,userName);
+  }
+ catch (  IOException e) {
+    e.printStackTrace();
+  }
+}
+</MethodContent>
+            </Method>
+        </Class>
+        <Class name="Deposite">
+            <Method lineNo="12" name="Deposite">
+                <MethodContent>{
+  this.accIdTypeBalance=accIdTypeBalance;
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="18" name="deposite">
+                <MethodContent>{
+  for (  Map.Entry&lt;Integer,HashMap&lt;String,HashMap&lt;String,Double&gt;&gt;&gt; letterEntry : accIdTypeBalance.entrySet()) {
+    int accountNumber=letterEntry.getKey();
+    if (accountNumber == accno) {
+      flag=true;
+      for (      Map.Entry&lt;String,HashMap&lt;String,Double&gt;&gt; me : letterEntry.getValue().entrySet()) {
+        String accountType=me.getKey();
+        for (        Map.Entry&lt;String,Double&gt; userNameAmount : me.getValue().entrySet()) {
+          String userName=userNameAmount.getKey();
+          Double amount=userNameAmount.getValue();
+          System.out.println(" accountNumber " + accountNumber + " accountType "+ accountType+ " userName "+ userName+ " Amount "+ amount);
+          accountUpdate(accountNumber,accountType,userName,amount);
+          return true;
+        }
+      }
+    }
+ else {
+      flag=false;
+    }
+  }
+  if (!flag) {
+    System.out.println("This account does not exist");
+    return false;
+  }
+  return false;
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="56" name="accountUpdate">
+                <MethodContent>{
+  userNameAcc.put(userName,amount);
+  accountUserNameAcc.put(accountType,userNameAcc);
+  accIdTypeBalance.put(accountNumber,accountUserNameAcc);
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="62" name="getQuestionAnswer">
+                <MethodContent>{
+  System.out.println("Enter Account No ");
+  int accno;
+  try {
+    accno=Integer.parseInt(br.readLine());
+    System.out.println("Enter Amount");
+    float am1=Float.parseFloat(br.readLine());
+    boolean state=deposite(am1,accno);
+    if (state == true)     System.out.println("Deposit Successful");
+ else     System.out.println("Invalid Details");
+  }
+ catch (  NumberFormatException e) {
+    e.printStackTrace();
+  }
+catch (  IOException e) {
+    e.printStackTrace();
+  }
+}
+</MethodContent>
+            </Method>
+        </Class>
+        <Class name="Main">
+            <Method lineNo="7" name="main">
+                <MethodContent>{
+  HashMap&lt;Integer,HashMap&lt;String,HashMap&lt;String,Double&gt;&gt;&gt; accIdTypeBalance=new HashMap&lt;Integer,HashMap&lt;String,HashMap&lt;String,Double&gt;&gt;&gt;();
+  BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+  int count=0;
+  System.out.println("main method");
+  System.out.print("Enter the Operation to be Performed\n1.New Account\n2.Deposit Money\n3.Withdraw Money\n4.Search\n5.Show All Account\n6.Exit\n");
+  int choice;
+  choice=Integer.parseInt(br.readLine());
+  do {
+switch (choice) {
+case 1:
+      BankAccount bank=new BankAccount(accIdTypeBalance,++count);
+    bank.getQuestionAnswer(br);
+  break;
+case 2:
+Deposite deposite=new Deposite(accIdTypeBalance);
+deposite.getQuestionAnswer(br);
+break;
+case 3:
+ShowAllAccount show=new ShowAllAccount();
+show.Account(accIdTypeBalance);
+break;
+case 4:
+Search search=new Search(accIdTypeBalance);
+search.getQuestionAnswer(br);
+break;
+case 5:
+Withdraw withDraw=new Withdraw(accIdTypeBalance);
+withDraw.getQuestionAnswer(br);
+break;
+}
+System.out.print("Enter the Operation to be Performed\n1.New Account\n2.Deposit Money\n3.Withdraw Money\n4.Search\n5.Show All Account\n6.Exit\n");
+choice=Integer.parseInt(br.readLine());
+}
+ while (choice != 6);
+}
+</MethodContent>
+            </Method>
+        </Class>
+        <Class name="Search">
+            <Method lineNo="7" name="Search">
+                <MethodContent>{
+  this.accIdTypeBalance=accIdTypeBalance;
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="10" name="search">
+                <MethodContent>{
+  for (  Map.Entry&lt;Integer,HashMap&lt;String,HashMap&lt;String,Double&gt;&gt;&gt; letterEntry : accIdTypeBalance.entrySet()) {
+    int accountNumber=letterEntry.getKey();
+    if (accountNumber == accno) {
+      for (      Map.Entry&lt;String,HashMap&lt;String,Double&gt;&gt; me : letterEntry.getValue().entrySet()) {
+        String accountType=me.getKey();
+        for (        Map.Entry&lt;String,Double&gt; userNameAmount : me.getValue().entrySet()) {
+          String userName=userNameAmount.getKey();
+          Double amount=userNameAmount.getValue();
+          System.out.println(" accountNumber " + accountNumber + " accountType "+ accountType+ " userName "+ userName+ " Amount "+ amount);
+          return true;
+        }
+      }
+    }
+  }
+  return false;
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="36" name="getQuestionAnswer">
+                <MethodContent>{
+  System.out.println("Enter Account No ");
+  int accn;
+  try {
+    accn=Integer.parseInt(br.readLine());
+    boolean state=search(accn);
+    if (state == false)     System.out.println("Invalid Details");
+  }
+ catch (  NumberFormatException e) {
+    e.printStackTrace();
+  }
+catch (  IOException e) {
+    e.printStackTrace();
+  }
+}
+</MethodContent>
+            </Method>
+        </Class>
+        <Class name="ShowAllAccount">
+            <Method lineNo="8" name="Account">
+                <MethodContent>{
+  for (  Map.Entry&lt;Integer,HashMap&lt;String,HashMap&lt;String,Double&gt;&gt;&gt; letterEntry : accIdTypeBalance.entrySet()) {
+    int accountNumber=letterEntry.getKey();
+    System.out.println("This section will show you all the.. ");
+    for (    Map.Entry&lt;String,HashMap&lt;String,Double&gt;&gt; me : letterEntry.getValue().entrySet()) {
+      String accountType=me.getKey();
+      for (      Map.Entry&lt;String,Double&gt; userNameAmount : me.getValue().entrySet()) {
+        String userName=userNameAmount.getKey();
+        Double amount=userNameAmount.getValue();
+        System.out.println(" accountNumber " + accountNumber + " accountType "+ accountType+ " userName "+ userName+ " Amount "+ amount);
+        break;
+      }
+    }
+  }
+}
+</MethodContent>
+            </Method>
+        </Class>
+        <Class name="Withdraw">
+            <Method lineNo="11" name="Withdraw">
+                <MethodContent>{
+  this.accIdTypeBalance=accIdTypeBalance;
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="16" name="getQuestionAnswer">
+                <MethodContent>{
+  System.out.println("Enter Account No ");
+  int accn;
+  try {
+    accn=Integer.parseInt(br.readLine());
+    System.out.println("Enter the amount for Withrawl");
+    float withdrawAmount=Float.parseFloat(br.readLine());
+    for (    Map.Entry&lt;Integer,HashMap&lt;String,HashMap&lt;String,Double&gt;&gt;&gt; letterEntry : accIdTypeBalance.entrySet()) {
+      int accountNumber=letterEntry.getKey();
+      if (accountNumber == accn) {
+        flag=true;
+        for (        Map.Entry&lt;String,HashMap&lt;String,Double&gt;&gt; me : letterEntry.getValue().entrySet()) {
+          String accountType=me.getKey();
+          for (          Map.Entry&lt;String,Double&gt; userNameAmount : me.getValue().entrySet()) {
+            String userName=userNameAmount.getKey();
+            Double savedAmount=userNameAmount.getValue();
+            if (savedAmount &lt;= withdrawAmount) {
+              System.out.println(" accountNumber " + accountNumber + " accountType "+ accountType+ " userName "+ userName+ " Amount "+ withdrawAmount);
+              currentMoney=savedAmount;
+              updateAccount(accountNumber,accountType,userName,currentMoney);
+            }
+ else             System.out.println("Invalid Amount");
+          }
+        }
+      }
+ else       flag=false;
+    }
+  }
+ catch (  NumberFormatException e) {
+    e.printStackTrace();
+  }
+catch (  IOException e) {
+    e.printStackTrace();
+  }
+}
+</MethodContent>
+            </Method>
+            <Method lineNo="61" name="updateAccount">
+                <MethodContent>{
+  userNameAcc.put(userName,currentAmount);
+  accountUserNameAcc.put(accountType,userNameAcc);
+  accIdTypeBalance.put(accountNumber,accountUserNameAcc);
+}
+</MethodContent>
+            </Method>
+        </Class>
+    </Package>
+</Source_Code>
